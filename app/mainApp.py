@@ -58,6 +58,18 @@ def betterCSV():
 	'BusI','RTruckI','ATruckI','SLimit','RoadU','G','A']) 
 	df.to_csv('data.csv', index=False)
 
+
+def generateHTML():
+	print 'generating HTML pages ...'  
+
+
+
+
+
+
+
+
+
 #betterCSV()
 
 '''
@@ -78,3 +90,4 @@ an.impactOfGender(df)
 an.impactOfAge(df)
 
 
+#generateHTML() 
