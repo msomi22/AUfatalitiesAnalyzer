@@ -20,11 +20,13 @@ class Analyzer():
 		#df = df[df['YYYY'] == 1990]  
 		df['YYYY'].plot(kind='hist', bins=8, title='Fatalities per year', facecolor='blue', alpha=0.5, density=1) 
 		#plt.show()
-		plt.savefig('data/fatalitiesPerYear')  
-		#print df#.describe() 
+		#plt.savefig('data/fatalitiesPerYear')  
 
-	def fatalitiesPerAstate(self, data): 
-		print 'fpas'
+	def fatalitiesPerAstate(self, df):
+		df = df.groupby(['State']).size().reset_index(name='Fatalities per Australian state')
+		df.plot(kind='pie', y='Fatalities per Australian state', ax=None, autopct='%1.1f%%', startangle=90, shadow=False, labels=df['State'], legend = False, fontsize=14)  
+		plt.savefig('data/fatalitiesPerAstate')  
+		
 
 	def fatalitiesInstantenous(self, data):
 		print 'fi' 
